@@ -6,13 +6,12 @@ import {
     useMaterialReactTable,
 } from "material-react-table";
 import { SchemaItemType } from "../../mock/tableData";
+import { MaterialReactTableType } from "../utils";
 
-interface MaterialReactTableType {
-    schemaData: SchemaItemType[];
-    data: MRT_RowData[];
-}
-
-const MaterialTable = ({ schemaData, data }: MaterialReactTableType) => {
+const MaterialTable: React.FunctionComponent<MaterialReactTableType> = ({
+    schemaData,
+    data,
+}: MaterialReactTableType) => {
     const tableData = useMemo(() => {
         return data || [];
     }, [data]);
